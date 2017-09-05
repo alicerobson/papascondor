@@ -10,18 +10,18 @@
 import argparse
 recoparser = argparse.ArgumentParser()
 recoparser.add_argument('-o','--routput', type=str, default='output.root', help='output.root')
-recoparser.add_argument('-i','--rinput', type=str, default='./ee_Z_ddbar.root', help='ee_Z_ddbar.root')
+recoparser.add_argument('-i','--rpythiainput', type=str, default='./ee_ZH_Zmumu_Hbb.txt', help='ee_ZH_Zmumu_Hbb.txt')
 recoparser.add_argument('-m','--rmag', type=float, help='2.')
 recoparser.add_argument('-n','--rmaxevents', type=int,default = 10, help='10')
 recoargs, _ = recoparser.parse_known_args()
 
 outputfilename = recoargs.routput
-inputfilename = recoargs.rinput
+pythiafile = recoargs.rpythiainput
 rrmag = recoargs.rmag
 rmaxevents = recoargs.rmaxevents
 
 print "=================================="
-print "input = ", inputfilename
+print "input = ", pythiafile
 print "output = ", outputfilename
 print "mag = ", rrmag
 print "maxevents = ", rmaxevents
@@ -35,7 +35,7 @@ from GaudiKernel import SystemOfUnits as units
 
 
 ### Example of pythia configuration file to generate events
-pythiafile="Sim/SimPapas/data/ee_ZH_Zmumu_Hbb.txt"
+#pythiafile="Sim/SimPapas/data/ee_ZH_Zmumu_Hbb.txt"
 
 #### Data service
 podioevent = FCCDataSvc("EventDataSvc")

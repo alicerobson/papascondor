@@ -22,12 +22,12 @@ source init.sh afs
 echo "run"
 echo "cluster: " $1
 echo "job: " $2
-echo "inputfile: " $3
+echo "pythiafile: " $3
 echo "field: " $4
 echo "maxevents: " $5
 
 pwd
-LD_PRELOAD=build.$BINARY_TAG/lib/libPapasUtils.so ./run fccrun.py ../simple_papastool_condor.py --rinput  $3 --routput $outputfilename --rmag $4 --rmaxevents $5
+LD_PRELOAD=build.$BINARY_TAG/lib/libPapasUtils.so ./run fccrun.py ../simple_papastool_condor.py --rpythiainput  $3 --routput $outputfilename --rmag $4 --rmaxevents $5
 
 #copy to EOS
 echo "LS:"
