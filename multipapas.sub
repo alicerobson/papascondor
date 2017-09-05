@@ -1,0 +1,17 @@
+executable            = papastest.sh
+
+output                = output/output.job.$(ClusterID).$(ProcId).out
+log                   = log/log.job.$(ClusterID).log
+error                 = error/error.job.$(ClusterID).$(ProcId).err
++JobFlavour = "longlunch"
++AccountingGroup = "group_u_FCC.local_gen"
+
+# arguments are clusterid processid input_root_file field max_number_events
+arguments			= $(ClusterID) $(ProcId) ./ee_Z_ddbar.root 2.1 10
+Queue
+
+arguments			= $(ClusterID) $(ProcId) ./ee_Z_ddbar.root 2.2 10
+Queue
+
+arguments			= $(ClusterID) $(ProcId) ./ee_Z_ddbar.root 2.3 10
+Queue
