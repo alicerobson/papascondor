@@ -1,4 +1,4 @@
-executable            = papastest.sh
+executable            = simpletest.sh
 
 output                = output/output.job.$(ClusterID).$(ProcId).txt
 log                   = log/log.job.$(ClusterID).txt
@@ -7,11 +7,5 @@ error                 = error/error.job.$(ClusterID).$(ProcId).txt
 +AccountingGroup = "group_u_FCC.local_gen"
 
 # arguments are clusterid processid input_root_file field max_number_events
-arguments			= $(ClusterID) $(ProcId) ee_ZH_Zmumu_Hbb.txt 2.1 10
-Queue
 
-arguments			= $(ClusterID) $(ProcId) ee_ZH_Zmumu_Hbb.txt 2.2 10
-Queue
-
-arguments			= $(ClusterID) $(ProcId) ee_ZH_Zmumu_Hbb.txt 2.3 10
 Queue
